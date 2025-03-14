@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   Button,
@@ -20,6 +20,7 @@ import {
 } from "@fluentui/react-icons";
 
 import "./OutlookEmailComposer.scss";
+import { fetchTranslation } from "./util/api.js";
 
 const OutlookEmailComposer = () => {
   const [subject, setSubject] = useState("Test");
@@ -27,6 +28,24 @@ const OutlookEmailComposer = () => {
   const [to, setTo] = useState("Rembrandt");
   const [showBcc, setShowBcc] = useState(false);
   const [showCc, setShowCc] = useState(false);
+  const [translation, setTranslation] = useState("");
+  const [language, setLanguage] = useState("funny");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!body) {
+      alert("please fill out the form");
+      return;
+    }
+
+    try {
+      let tr = await fetchTranslation(body, language);
+      setTranslation(tr.translation);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <FluentProvider>
@@ -72,6 +91,7 @@ const OutlookEmailComposer = () => {
                   appearance="primary"
                   icon={<Translate24Regular />}
                   className="email-composer__translate-button"
+                  onClick={handleSubmit}
                 >
                   Translate
                 </Button>
@@ -153,7 +173,7 @@ const OutlookEmailComposer = () => {
                 className="email-composer__textarea"
                 appearance="outline-none"
               />
-              <div className="email-composer__translation"> {body}</div>
+              <div className="email-composer__translation"> {translation}</div>
             </div>
 
             {/* Status bar */}
