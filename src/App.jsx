@@ -6,7 +6,6 @@ import {
   Textarea,
   Avatar,
   FluentProvider,
-  Dropdown,
   Menu,
   MenuTrigger,
   MenuPopover,
@@ -15,11 +14,14 @@ import {
 } from "@fluentui/react-components";
 import {
   Send24Regular,
+  Print24Regular,
+  MailRead24Regular,
+  Flag24Regular,
   ChevronDown24Regular,
+  ChevronRight24Regular,
   Delete24Regular,
   MoreHorizontal24Regular,
   DrawerDismiss24Regular,
-  ChevronCircleDown24Regular,
   Edit24Regular,
   Checkmark24Regular,
   Translate24Regular,
@@ -36,16 +38,6 @@ const OutlookEmailComposer = () => {
   const [showCc, setShowCc] = useState(false);
   const [translation, setTranslation] = useState("");
   const [language, setLanguage] = useState("english");
-
-  // const handleTargetLanguage = async (event) => {
-  //   event.preventDefault();
-
-  //   let lng = event.target.value;
-
-  //   console.log(lng);
-
-  //   setLanguage(lng);
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -136,16 +128,34 @@ const OutlookEmailComposer = () => {
                   </MenuTrigger>
                   <MenuPopover>
                     <MenuList>
-                      <MenuItem>Other reply actions</MenuItem>
-                      <MenuItem>Delete</MenuItem>
-                      <MenuItem>Mark as read</MenuItem>
-                      <MenuItem>Flag</MenuItem>
+                      <MenuItem>
+                        Other reply actions <ChevronRight24Regular />
+                      </MenuItem>
+                      <MenuItem>
+                        <Delete24Regular />
+                        Delete
+                      </MenuItem>
+                      <MenuItem>
+                        <MailRead24Regular />
+                        Mark as read
+                      </MenuItem>
+                      <MenuItem>
+                        <Flag24Regular /> Flag
+                      </MenuItem>
                       <MenuItem>Customize actions</MenuItem>
-                      <MenuItem>Report</MenuItem>
-                      <MenuItem>Print</MenuItem>
+                      <MenuItem>
+                        Report <ChevronRight24Regular />
+                      </MenuItem>
+                      <MenuItem>
+                        <Print24Regular />
+                        Print
+                      </MenuItem>
                       <Menu>
                         <MenuTrigger disableButtonEnhancement>
-                          <MenuItem>Translate</MenuItem>
+                          <MenuItem>
+                            <Translate24Regular />
+                            Translate
+                          </MenuItem>
                         </MenuTrigger>
                         <MenuPopover>
                           <MenuList>
@@ -175,7 +185,9 @@ const OutlookEmailComposer = () => {
                       <MenuItem>Show immersive reader</MenuItem>
                       <MenuItem>View</MenuItem>
                       <MenuItem>Download</MenuItem>
-                      <MenuItem>Advanced Action</MenuItem>
+                      <MenuItem>
+                        Advanced actions <ChevronRight24Regular />
+                      </MenuItem>
                     </MenuList>
                   </MenuPopover>
                 </Menu>
