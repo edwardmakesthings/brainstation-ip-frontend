@@ -248,7 +248,15 @@ const OutlookEmailComposer = () => {
                 className="email-composer__textarea"
                 appearance="outline-none"
               />
-              <div className="email-composer__translation"> {translation}</div>
+              <div className="email-composer__translation">
+                {" "}
+                {translation.split("\\n").map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
 
             {/* Status bar */}
