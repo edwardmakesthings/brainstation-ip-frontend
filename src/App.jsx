@@ -19,6 +19,7 @@ import {
   Flag24Regular,
   ChevronDown24Regular,
   ChevronRight24Regular,
+  ChevronRight16Regular,
   Delete24Regular,
   MoreHorizontal24Regular,
   DrawerDismiss24Regular,
@@ -128,32 +129,22 @@ const OutlookEmailComposer = () => {
                   </MenuTrigger>
                   <MenuPopover>
                     <MenuList>
-                      <MenuItem>
-                        Other reply actions <ChevronRight24Regular />
+                      <MenuItem icon={<ChevronRight24Regular />}>
+                        Other reply actions
                       </MenuItem>
-                      <MenuItem>
-                        <Delete24Regular />
-                        Delete
-                      </MenuItem>
-                      <MenuItem>
-                        <MailRead24Regular />
+                      <MenuItem icon={<Delete24Regular />}>Delete</MenuItem>
+                      <MenuItem icon={<MailRead24Regular />}>
                         Mark as read
                       </MenuItem>
-                      <MenuItem>
-                        <Flag24Regular /> Flag
-                      </MenuItem>
+                      <MenuItem icon={<Flag24Regular />}>Flag</MenuItem>
                       <MenuItem>Customize actions</MenuItem>
                       <MenuItem>
-                        Report <ChevronRight24Regular />
+                        Report <ChevronRight16Regular />
                       </MenuItem>
-                      <MenuItem>
-                        <Print24Regular />
-                        Print
-                      </MenuItem>
+                      <MenuItem icon={<Print24Regular />}>Print</MenuItem>
                       <Menu>
                         <MenuTrigger disableButtonEnhancement>
-                          <MenuItem>
-                            <Translate24Regular />
+                          <MenuItem icon={<Translate24Regular />}>
                             Translate
                           </MenuItem>
                         </MenuTrigger>
@@ -189,7 +180,7 @@ const OutlookEmailComposer = () => {
                       <MenuItem>View</MenuItem>
                       <MenuItem>Download</MenuItem>
                       <MenuItem>
-                        Advanced actions <ChevronRight24Regular />
+                        Advanced actions <ChevronRight16Regular />
                       </MenuItem>
                     </MenuList>
                   </MenuPopover>
