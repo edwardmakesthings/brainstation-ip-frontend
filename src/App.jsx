@@ -6,6 +6,12 @@ import {
   Textarea,
   Avatar,
   FluentProvider,
+  Dropdown,
+  Menu,
+  MenuTrigger,
+  MenuPopover,
+  MenuList,
+  MenuItem,
 } from "@fluentui/react-components";
 import {
   Send24Regular,
@@ -29,7 +35,17 @@ const OutlookEmailComposer = () => {
   const [showBcc, setShowBcc] = useState(false);
   const [showCc, setShowCc] = useState(false);
   const [translation, setTranslation] = useState("");
-  const [language, setLanguage] = useState("funny");
+  const [language, setLanguage] = useState("");
+
+  // const handleTargetLanguage = async (event) => {
+  //   event.preventDefault();
+
+  //   let lng = event.target.value;
+
+  //   console.log(lng);
+
+  //   setLanguage(lng);
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -110,6 +126,59 @@ const OutlookEmailComposer = () => {
                   icon={<DrawerDismiss24Regular />}
                   className="email-composer__icon-button"
                 />
+                <Menu>
+                  <MenuTrigger disableButtonEnhancement>
+                    <Button
+                      appearance="transparent"
+                      icon={<MoreHorizontal24Regular />}
+                      className="email-composer__icon-button"
+                    />
+                  </MenuTrigger>
+                  <MenuPopover>
+                    <MenuList>
+                      <MenuItem>Other reply actions</MenuItem>
+                      <MenuItem>Delete</MenuItem>
+                      <MenuItem>Mark as read</MenuItem>
+                      <MenuItem>Flag</MenuItem>
+                      <MenuItem>Customize actions</MenuItem>
+                      <MenuItem>Report</MenuItem>
+                      <MenuItem>Print</MenuItem>
+                      <Menu>
+                        <MenuTrigger disableButtonEnhancement>
+                          <MenuItem>Translate</MenuItem>
+                        </MenuTrigger>
+                        <MenuPopover>
+                          <MenuList>
+                            <MenuItem onClick={() => setLanguage("English")}>
+                              English
+                            </MenuItem>
+                            <MenuItem onClick={() => setLanguage("French")}>
+                              French
+                            </MenuItem>
+                            <MenuItem onClick={() => setLanguage("Spanish")}>
+                              Spanish
+                            </MenuItem>
+                            <MenuItem onClick={() => setLanguage("Corporate")}>
+                              Tone: Corporate
+                            </MenuItem>
+                            <MenuItem onClick={() => setLanguage("pirate")}>
+                              Tone: Pirate
+                            </MenuItem>
+                            <MenuItem
+                              onClick={() => setLanguage("Shakespearean")}
+                            >
+                              Tone: Shakespearean
+                            </MenuItem>
+                          </MenuList>
+                        </MenuPopover>
+                      </Menu>
+                      <MenuItem>Show immersive reader</MenuItem>
+                      <MenuItem>View</MenuItem>
+                      <MenuItem>Download</MenuItem>
+                      <MenuItem>Advanced Action</MenuItem>
+                    </MenuList>
+                  </MenuPopover>
+                </Menu>
               </div>
             </div>
 
