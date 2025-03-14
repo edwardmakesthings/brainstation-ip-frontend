@@ -153,6 +153,7 @@ const OutlookEmailComposer = () => {
                 className="email-composer__textarea"
                 appearance="outline-none"
               />
+              <div className="email-composer__translation"> {body}</div>
             </div>
 
             {/* Status bar */}
