@@ -35,7 +35,7 @@ const OutlookEmailComposer = () => {
   const [showBcc, setShowBcc] = useState(false);
   const [showCc, setShowCc] = useState(false);
   const [translation, setTranslation] = useState("");
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState("english");
 
   // const handleTargetLanguage = async (event) => {
   //   event.preventDefault();
