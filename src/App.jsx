@@ -171,10 +171,10 @@ const OutlookEmailComposer = () => {
                             <MenuItem onClick={() => setLanguage("Corporate")}>
                               Tone: Corporate
                             </MenuItem>
-                            <MenuItem onClick={() => setLanguage("respectful")}>
+                            <MenuItem onClick={() => setLanguage("Respectful")}>
                               Tone: Respectful
                             </MenuItem>
-                            <MenuItem onClick={() => setLanguage("pirate")}>
+                            <MenuItem onClick={() => setLanguage("Pirate")}>
                               Tone: Pirate
                             </MenuItem>
                             <MenuItem
