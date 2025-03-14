@@ -214,6 +214,16 @@
   }
 }
 
+.fui-MenuItem__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & svg {
+    height: 20px;
+    width: 20px;
+  }
+}
+
 // Mobile responsive styles
 @media (max-width: 600px) {
   .email-composer {
